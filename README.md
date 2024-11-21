@@ -2,8 +2,18 @@
 - Used Vite Template 
 - Configured TailwindCSS 
 - Header
+- Routing of App
 - Login Form
 - Sign Up Form
+- Form Validation
+- useRef Hook
+- Firebase Setup
+- Deploying our app to Production
+- Create SignUp User Account in Firebase
+- Implement Sign In user API
+- Create Redux Store with userSlice
+- Implement Sign Out
+- Update Profile
 
 # Features
 - Login/Sign Up
