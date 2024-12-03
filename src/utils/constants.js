@@ -3,7 +3,6 @@ export const LOGO =
 
 export const USER_AVATAR = "";
 
-export const URL = "https://api.themoviedb.org/3/movie/now_playing?page=1";
 export const API_OPTIONS = {
   method: "GET",
   headers: {
@@ -12,3 +11,5 @@ export const API_OPTIONS = {
       "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NjlkYjJjZmFjMmE1NTU3NDYyNDU3OGY2NjFhZDAxNCIsIm5iZiI6MTczMjI3NjY2MC4xMzE4MDM4LCJzdWIiOiI2NzNmMzdkODRkZWMxZjk4YjI5YmVjOTciLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.xqb6IbZy7bCNTJPKdKTq0pbK7d3R85_ZQWoa1X8YAxo",
   },
 };
+
+export const IMG_CDN_URL = "https://image.tmdb.org/t/p/original";

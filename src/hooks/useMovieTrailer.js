@@ -5,7 +5,6 @@ import { useEffect } from "react";
 
 const useMovieTrailer = (movieId) => {
   const dispatch = useDispatch();
-  console.log(movieId);
 
   //fetching trailer video and updating the store with trailer video data
   const getMovieVideos = async () => {
