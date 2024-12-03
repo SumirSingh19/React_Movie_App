@@ -29,6 +29,10 @@
 - Embed the Youtube Video and Make it autoplay and mute
 - Add Tailwind Classes to make Main Container look Awesome 
 - Build Secondary Component
+- In this, Build Movie List, in which Now Playing, Trending, Popular and Upcoming Movies are there.
+- Build Movie Card
+- Make the Browse Page look better
+- Make custom hooks to reduce the code and better structure
 
 # Features
 - Login/Sign Up
