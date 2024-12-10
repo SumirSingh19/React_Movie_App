@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 
 const MovieList = ({ title, movies }) => {
   return (
-    <div className="p-6 bg-transparent">
+    <div className="p-6 bg-transparent -mt-20">
       <h2 className="text-lg font-bold mb-4 text-white">{title}</h2>
-      <div className="flex overflow-x-scroll scroll">
+      <div className="flex overflow-x-scroll hide-scrollbar">
         {movies && movies.length > 0 ? (
           movies?.map((movie) => (
             <div

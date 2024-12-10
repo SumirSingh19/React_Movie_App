@@ -5,12 +5,15 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { addUser, removeUser } from "../utils/userSlice";
-import { LOGO } from "../utils/constants";
+import { LOGO, SUPPORTED_LANGUAGES } from "../utils/constants";
+import { toggleGPTSearchView } from "../utils/gptSlice";
+import { changeLanguage } from "../utils/configSlice";
 
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user) || {};
+  const showGPTSearch = useSelector((store) => store.gpt.showGPTSearch);
   const handleSignOut = () => {
     signOut(auth)
       .then(() => navigate("/"))
@@ -39,19 +42,53 @@ const Header = () => {
       }
     });
 
-    // Unsubscribe when component unmounts 
+    // Unsubscribe when component unmounts
     return () => unsubscribe();
+  }, []);
+
+  const handleGPTSearchClick = () => {
+    //Toggle GPT Search
+    dispatch(toggleGPTSearchView());
+  };
+
+  const handleLanguageChange = (e) => {
+    // console.log(e.target.value);
+    dispatch(changeLanguage(e.target.value));
+  };
+
+  useEffect(() => {
+    handleGPTSearchClick();
   }, []);
 
   return (
     <div className="absolute w-full px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between items-center">
-      <img
-        className="w-44"
-        src={LOGO}
-        alt="logo"
-      />
+      <img className="w-44" src={LOGO} alt="logo" />
       {user?.uid && (
         <div className="flex flex-col items-center sm:flex-row gap-2">
+          {showGPTSearch && (
+            <select
+              name="Language"
+              className="p-2 bg-inherit m-2 bg-gray-600 text-white rounded-md"
+              onChange={handleLanguageChange}
+            >
+              {SUPPORTED_LANGUAGES.map((lang) => (
+                <option
+                  className="bg-gray-700"
+                  key={lang.identifier}
+                  value={lang.identifier}
+                >
+                  {lang.name}
+                </option>
+              ))}
+            </select>
+          )}
+
+          <button
+            className="py-1 m-2 px-3 bg-gray-600 text-white text-sm rounded-md"
+            onClick={handleGPTSearchClick}
+          >
+            {showGPTSearch?"Home Page" : "GPT Search"}
+          </button>
           <img
             src={user?.photoURL || ICON}
             className="w-10 cursor-pointer rounded-sm shadow-sm"

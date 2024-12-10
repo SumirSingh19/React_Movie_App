@@ -33,6 +33,10 @@
 - Build Movie Card
 - Make the Browse Page look better
 - Make custom hooks to reduce the code and better structure
+- GPT Search Page
+- GPT Search Bar
+- Multi-Language Feature for GPT Search Bar
+- Integrate GPT APIs =>  get our OpenAI key
 
 # Features
 - Login/Sign Up

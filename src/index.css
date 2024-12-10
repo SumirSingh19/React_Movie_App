@@ -8,3 +8,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Global CSS */
+
+@layer utilities {
+  .hide-scrollbar {
+    /* Hide the scrollbar */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Edge */
+  }
+}
+
+/* Style the vertical scrollbar */
+*::-webkit-scrollbar {
+  width: 8px; /* Width of the vertical scrollbar */
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #555; /* Grayish color for the scrollbar thumb */
+  border-radius: 10px; /* Rounded edges for a modern look */
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #777; /* Slightly lighter gray on hover */
+}
+
+*::-webkit-scrollbar-track {
+  background: #222; /* Dark background for the track */
+  border-radius: 10px;
+}
