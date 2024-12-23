@@ -94,11 +94,12 @@ const Login = () => {
         <img
           src="https://assets.nflxext.com/ffe/siteui/vlv3/03ad76d1-e184-4d99-ae7d-708672fa1ac2/web/IN-en-20241111-TRIFECTA-perspective_149877ab-fcbd-4e4f-a885-8d6174a1ee81_large.jpg"
           alt=""
+          className="h-screen object-cover md:h-full"
         />
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="absolute p-16 bg-black bg-opacity-75 w-2/6 mt-36 mx-auto right-0 left-0 font-helvetica"
+        className="absolute p-16 pt-40 md:pt-16 h-screen md:h-auto bg-black bg-opacity-75 md:w-2/6 md:mt-32 mx-auto right-0 left-0"
       >
         <h1 className="font-bold text-4xl pb-2">
           {isSignInForm ? "Sign In" : "Sign Up"}

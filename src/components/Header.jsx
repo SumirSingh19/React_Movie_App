@@ -5,7 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { addUser, removeUser } from "../utils/userSlice";
-import { LOGO, SUPPORTED_LANGUAGES } from "../utils/constants";
+import LOGO from "../assets/images/logo.png"
+import { SUPPORTED_LANGUAGES } from "../utils/constants";
 import { toggleGPTSearchView } from "../utils/gptSlice";
 import { changeLanguage } from "../utils/configSlice";
 
@@ -61,14 +62,14 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="absolute w-full px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between items-center">
+    <div className="absolute w-full px-2 md:px-8 py-2 bg-gradient-to-b from-black z-10 flex flex-col md:flex-row justify-between items-center sm: md:">
       <img className="w-44" src={LOGO} alt="logo" />
       {user?.uid && (
-        <div className="flex flex-col items-center sm:flex-row gap-2">
+        <div className="flex items-center sm:flex-row gap-4 md:gap-2">
           {showGPTSearch && (
             <select
               name="Language"
-              className="p-2 bg-inherit m-2 bg-gray-600 text-white rounded-md"
+              className="md:p-2 bg-inherit md:m-2 bg-gray-600 text-white rounded-md"
               onChange={handleLanguageChange}
             >
               {SUPPORTED_LANGUAGES.map((lang) => (
@@ -84,7 +85,7 @@ const Header = () => {
           )}
 
           <button
-            className="py-1 m-2 px-3 bg-gray-600 text-white text-sm rounded-md"
+            className="py-1 md:m-2 px-3 bg-gray-600 text-white text-sm rounded-md"
             onClick={handleGPTSearchClick}
           >
             {showGPTSearch?"Home Page" : "GPT Search"}

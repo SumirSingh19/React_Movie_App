@@ -1,18 +1,18 @@
 import { useSelector } from "react-redux";
 import VideoBackground from "./VideoBackground";
-import VIdeoTitle from "./VIdeoTitle";
+import VIdeoTitle from "./VideoTitle";
 
 const MainContainer = () => {
   const movies = useSelector((store) => store.movies?.nowPlayingMovies);
-  //early return
-  if (!movies) return;
+
+  // Early return if movies data is unavailable
+  if (!movies) return null;
 
   const mainMovie = movies[0];
-
   const { original_title, overview, id } = mainMovie;
 
   return (
-    <div className="relative overflow-hidden w-full">
+    <div className="relative overflow-hidden w-full h-screen">
       <VIdeoTitle movieId={id} title={original_title} overview={overview} />
       <VideoBackground movieId={id} />
     </div>
